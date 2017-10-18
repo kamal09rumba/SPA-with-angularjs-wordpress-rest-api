@@ -1,0 +1,11 @@
+<h1>{{ post.title.rendered }}</h1>
+<h3 ng-bind-html="post.my_awesome_field | to_trusted"></h3>
+<div ng-if="post.acf.name">
+    <p>{{post.acf.name}}</p>
+    <p>{{post.acf.title}}</p>
+    <img ng-src="{{post.acf.image.url}}">
+</div>
+<div ng-if="!post.acf.name">
+    No data
+</div>
+<div ng-bind-html="post.content.rendered | to_trusted"></div>
